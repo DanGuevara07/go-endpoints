@@ -1,0 +1,25 @@
+service: returns
+provider:
+  name: aws
+  runtime: go1.x
+  stage: local
+
+plugins:
+  - serverless-offline
+package:
+  exclude:
+    - ./**
+  include:
+    - ./bin/build
+functions:
+  main:
+    runtime: go1.x
+    handler: bin/build
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: '{proxy+}'
+

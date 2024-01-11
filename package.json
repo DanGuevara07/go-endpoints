@@ -1,0 +1,8 @@
+{
+  "name": "lambda-golang-offline",
+  "description": "To run the golang lambda service locally",
+  "version": "1.0.0",
+  "devDependencies": {
+    "serverless-offline": "^13.3.2"
+  }
+}
